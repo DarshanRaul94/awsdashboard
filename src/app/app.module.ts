@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
+import { ConfigComponent } from './Actions/config/config.component';
 import { MainComponent } from './Dashboards/main/main.component';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +24,8 @@ import { ButtonComponent } from './components/button/button.component';
        IamboardComponent,
     Ec2boardComponent,
     CloudwatchboardComponent,
-    RdsboardComponent
+    RdsboardComponent,
+    ConfigComponent
    ],
   bootstrap:    [ AppComponent ]
 })

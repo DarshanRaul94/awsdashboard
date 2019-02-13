@@ -1,0 +1,27 @@
+
+<div class="container">
+  <form>
+    <h1>AWS configuration</h1>
+    
+    <div class="form-group">
+      <input type="text" [(ngModel)]="accesskey" name="ak" required="required"/>
+     
+     
+      <label for="input" class="control-label">Access Key</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="secretaccesskey" name="sak" required="required"/>
+      <label for="input" class="control-label">Secret Access Key</label><i class="bar"></i>
+    </div>
+    <div class="form-group">
+      <input type="text" [(ngModel)]="region" name="reg" required="required"/>
+      <label for="input" class="control-label">Region</label><i class="bar"></i>
+    </div>
+   
+  <div class="button-container">
+
+    <button type="button"  class="button" routerLink="/main"><span>Submit</span></button>
+
+  </div>
+</form>
+</div>

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.css','./main.component2.css']
 })
 export class MainComponent implements OnInit {
-
+config=true;
   constructor() { }
 
   ngOnInit() {

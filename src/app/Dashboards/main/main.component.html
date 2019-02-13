@@ -1,4 +1,9 @@
- <!-- Page Header -->
+ <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+ <div *ngIf="config ; then thenBlock ; else elseBlock"></div>
+
+               <ng-template #thenBlock>
             <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Dashboard</span>
@@ -10,7 +15,7 @@
             <!-- Small Stats Blocks -->
             <div class="row">
               <div class="col-lg col-md-6 col-sm-6 mb-4  animated pulse slow">
-               <app-card  routerLink="/S3board" [cardname]="'Bucketss'" [carddata]="noofbuckets()"></app-card>
+               <app-card  routerLink="/S3board" [cardname]="'Buckets'" [carddata]="noofbuckets()"></app-card>
               </div>
               <div class="col-lg col-md-6 col-sm-6 mb-4 animated pulse slow">
                 <app-card  routerLink="/IAMboard" [cardname]="'Users'" [carddata]="noofusers()"></app-card>
@@ -32,3 +37,12 @@
               </div>
               
             </div>
+       
+
+             </ng-template >
+
+             <ng-template #elseBlock>
+<app-config></app-config>
+<app-button [btntitle]="'Back'" routerLink="/main"></app-button>
+
+               

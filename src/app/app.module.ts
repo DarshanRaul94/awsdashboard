@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
+import { CircleComponent } from './components/circle/circle.component';
+import { ButtonComponent } from './components/button/button.component';
+import { PiechartComponent } from './components/piechart/piechart.component';
 import { ConfigComponent } from './Actions/config/config.component';
 import { MainComponent } from './Dashboards/main/main.component';
 import { AppComponent } from './app.component';
@@ -12,7 +15,7 @@ import { Ec2boardComponent } from './Dashboards/services/ec2board/ec2board.compo
 import { CloudwatchboardComponent } from './Dashboards/services/cloudwatchboard/cloudwatchboard.component';
 import { RdsboardComponent } from './Dashboards/services/rdsboard/rdsboard.component';
 
-import { ButtonComponent } from './components/button/button.component';
+
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ,AppRoutingModule],
@@ -25,7 +28,9 @@ import { ButtonComponent } from './components/button/button.component';
     Ec2boardComponent,
     CloudwatchboardComponent,
     RdsboardComponent,
-    ConfigComponent
+    ConfigComponent,
+    CircleComponent,
+    PiechartComponent
    ],
   bootstrap:    [ AppComponent ]
 })

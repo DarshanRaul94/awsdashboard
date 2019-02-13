@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 20px;
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  color: #301864;
+  background: rgba(0, 0, 255, 0.2)
+    url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4" viewBox="0 0 4 4"%3E%3Cpath fill="%239C92AC" fill-opacity="0.4" d="M1 3h1v1H1V3zm2-2h1v1H3V1z"%3E%3C/path%3E%3C/svg%3E');
+
+  .wrapper {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 20px;
+  }
+}
+.circle {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  border: 8px solid #02aaff;
+  transform: scale(1);
+  transition: transform 0.3s;
+  margin: 20px;
+  background-color:white;
+
+ 
+  /***Flip card section***/
+
+  &--text {
+    display: flex;
+    opacity: 0;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding: 10px;
+    transition: opacity 0.5s;
+  }
+
+  &--btn {
+    display: block;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+    border-top-color: rgba(255, 0, 0, 0.4);
+    border-left-color: rgba(255, 0, 0, 0.4);
+    border-bottom-color: rgba(255, 0, 0, 0.4);
+    border-right-color: rgba(255, 0, 0, 0.4);
+
+    transition: transform 0.2s, border-top-color 0.18s linear,
+      border-left-color 0.18s linear 0.1s, border-bottom-color 0.18s linear 0.2s,
+      border-right-color 0.18s linear 0.15s;
+
+    .circle--text {
+      opacity: 1;
+    }
+  }
+}
+
+.text{
+
+
+  display: flex;
+   
+    border-radius: 50%;
+    
+    
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding: 10px;
+    
+}

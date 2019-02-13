@@ -1,8 +1,22 @@
-<div class="page-header row no-gutters py-4">
+ 
+ <div class="page-header row no-gutters py-4">
               <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
                 <span class="text-uppercase page-subtitle">Dashboard</span>
                 <h3 class="page-title">AWS S3</h3>
               </div>
             </div>
 
-             <app-button [btntitle]="'Back'" routerLink="/main"></app-button>
+            <div class="block">
+<app-circle [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
+<app-circle style="margin:40px;margin-top:0px" [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
+<app-circle [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
+            </div>
+            
+
+ <div class="block">
+   <app-button style="margin:40px;"  [btntitle]="'Create bucket'" routerLink="/main"></app-button>
+    <app-button style="margin:40px;"  [btntitle]="'Delete bucket'" routerLink="/main"></app-button>
+     <app-button style="margin:40px;"  [btntitle]="'Back'" routerLink="/main"></app-button>
+     
+
+   </div>           

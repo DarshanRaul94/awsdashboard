@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as CanvasJS from './canvasjs.min';
 
 @Component({
   selector: 'app-main',
@@ -10,6 +11,9 @@ config=true;
   constructor() { }
 
   ngOnInit() {
+   
+  
+
   }
 
 

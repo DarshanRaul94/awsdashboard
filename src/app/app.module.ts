@@ -15,7 +15,7 @@ import { Ec2boardComponent } from './Dashboards/services/ec2board/ec2board.compo
 import { CloudwatchboardComponent } from './Dashboards/services/cloudwatchboard/cloudwatchboard.component';
 import { RdsboardComponent } from './Dashboards/services/rdsboard/rdsboard.component';
 
-
+import { AwsconfigService } from './Services/awsconfig.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ,AppRoutingModule],
@@ -31,7 +31,7 @@ import { RdsboardComponent } from './Dashboards/services/rdsboard/rdsboard.compo
     ConfigComponent,
     CircleComponent,
     PiechartComponent
-   ],
+   ],providers: [AwsconfigService],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

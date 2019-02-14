@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AwsconfigService } from '../../../Services/awsconfig.service';
 @Component({
   selector: 'app-s3board',
   templateUrl: './s3board.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class S3boardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private AwsconfigService: AwsconfigService) { }
 
   ngOnInit() {
   }
 
+getbuckets(){
+
+
+  //this.AwsconfigService.getbucketdata();
+
+}
 }

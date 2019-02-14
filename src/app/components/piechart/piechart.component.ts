@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import * as CanvasJS from './canvasjs.min';
 @Component({
   selector: 'app-piechart',
-  templateUrl: './piechart.component.html',
-  styleUrls: ['./piechart.component.css']
+  templateUrl: './piechart.component.html'
+  
 })
 export class PiechartComponent implements OnInit {
 

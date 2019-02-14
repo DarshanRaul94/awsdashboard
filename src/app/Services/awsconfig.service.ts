@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import AWS = require('aws-sdk');
 AWS.config.region = 'ap-south-1'; // Region
 AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-    IdentityPoolId: 'ap-south-1:60e0568c-a1f8-4236-bed5-a7d2e02cddd5',
+    IdentityPoolId: '',
 });
 var s3 = new AWS.S3();
 var ec2 = new AWS.EC2();

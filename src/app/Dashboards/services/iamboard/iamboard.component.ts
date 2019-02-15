@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AwsconfigService } from '../../../Services/awsconfig.service';
 @Component({
   selector: 'app-iamboard',
   templateUrl: './iamboard.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IamboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private AwsconfigService: AwsconfigService) { }
 
   ngOnInit() {
   }
-
+getusers(){
+	
+	
+	this.AwsconfigService.createiamuser();
+	
+}
 }

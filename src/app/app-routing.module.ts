@@ -8,7 +8,7 @@ import { IamboardComponent } from './Dashboards/services/iamboard/iamboard.compo
 import { Ec2boardComponent } from './Dashboards/services/ec2board/ec2board.component';
 import { CloudwatchboardComponent } from './Dashboards/services/cloudwatchboard/cloudwatchboard.component';
 import { RdsboardComponent } from './Dashboards/services/rdsboard/rdsboard.component';
-
+import { CreateBucketComponent } from './Actions/S3/create-bucket/create-bucket.component';
 const routes: Routes = [
   { path: 'main', component: MainComponent },
   { path: 'S3board', component: S3boardComponent },
@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'EC2board', component: Ec2boardComponent },
   { path: 'RDSboard', component: RdsboardComponent },
   { path: 'CWboard', component: CloudwatchboardComponent },
-
+   { path: 'S3/CreateBucket', component: CreateBucketComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full' },
 ];
 @NgModule({

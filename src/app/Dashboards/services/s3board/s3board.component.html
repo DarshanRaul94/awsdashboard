@@ -14,8 +14,8 @@
             
 
  <div class="block">
-   <app-button style="margin:40px;" (click)="getbuckets()" [btntitle]="'Create bucket'" ></app-button>
-    <app-button style="margin:40px;"  [btntitle]="'Delete bucket'" ></app-button>
+   <app-button style="margin:40px;" routerLink="/S3/CreateBucket" [btntitle]="'Create bucket'" ></app-button>
+    <app-button style="margin:40px;"  (click)="getbuckets()" [btntitle]="'list bucket'" ></app-button>
      <app-button style="margin:40px;"  [btntitle]="'Back'" routerLink="/main"></app-button>
      
 

@@ -14,7 +14,7 @@ import { IamboardComponent } from './Dashboards/services/iamboard/iamboard.compo
 import { Ec2boardComponent } from './Dashboards/services/ec2board/ec2board.component';
 import { CloudwatchboardComponent } from './Dashboards/services/cloudwatchboard/cloudwatchboard.component';
 import { RdsboardComponent } from './Dashboards/services/rdsboard/rdsboard.component';
-
+import { CreateBucketComponent } from './Actions/S3/create-bucket/create-bucket.component';
 import { AwsconfigService } from './Services/awsconfig.service';
 
 @NgModule({
@@ -30,7 +30,8 @@ import { AwsconfigService } from './Services/awsconfig.service';
     RdsboardComponent,
     ConfigComponent,
     CircleComponent,
-    PiechartComponent
+    PiechartComponent,
+    CreateBucketComponent
    ],providers: [AwsconfigService],
   bootstrap:    [ AppComponent ]
 })

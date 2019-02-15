@@ -15,7 +15,7 @@ export class S3boardComponent implements OnInit {
 getbuckets(){
 
 
-  //this.AwsconfigService.getbucketdata();
+  this.AwsconfigService.gets3buckets();
 
 }
 }

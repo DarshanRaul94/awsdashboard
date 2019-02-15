@@ -15,8 +15,7 @@ export class Ec2boardComponent implements OnInit {
 getservers(){
 
 
-  this.AwsconfigService.getec2data();
-
+this.AwsconfigService.getec2securitygroups();
 }
 
 

@@ -44,15 +44,11 @@ public getconfig(): Observable<boolean> {
 
 public setconfig(newValue: boolean): void {
     this.awsconfig.next(newValue);
+    console.log(this.AccessKey+this.SecretAccessKey+this.Region);
+    AWS.config.update({"accessKeyId": this.AccessKey, "secretAccessKey": this.SecretAccessKey, "region": this.Region});
 }
 
-changeconfig(){
-	
-	AWS.config.update({"accessKeyId": this.AccessKey, "secretAccessKey": this.SecretAccessKey, "region": this.Region});
-	
-	console.log(this.AccessKey+this.SecretAccessKey+this.Region);
-	
-}
+
 
 
 
@@ -97,10 +93,13 @@ gets3buckets(){
 var s3 = new S3();
 
 var params = {};
+
  s3.listBuckets(params, function(err, data) {
    if (err) console.log(err, err.stack); // an error occurred
    else     console.log(data);           // successful response
- }
+ })
+
+
 }
 
 

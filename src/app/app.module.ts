@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { CircleComponent } from './components/circle/circle.component';
@@ -18,7 +19,7 @@ import { CreateBucketComponent } from './Actions/S3/create-bucket/create-bucket.
 import { AwsconfigService } from './Services/awsconfig.service';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule ,AppRoutingModule],
+  imports:      [ BrowserModule, FormsModule ,AppRoutingModule,HttpClientModule],
   declarations: [ AppComponent,
     CardComponent,
     ButtonComponent,

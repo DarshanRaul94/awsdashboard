@@ -15,6 +15,12 @@ import {
 	NgbModal,
 	ModalDismissReasons
 } from '@ng-bootstrap/ng-bootstrap';
+
+
+
+var S3 =require('aws-sdk/clients/s3');
+var s3 = new S3();
+
 class Bucket {
 
 	bucket: string;
@@ -49,9 +55,8 @@ export class S3boardComponent implements OnInit {
 
 
 	createbucket() {
-
-		console.log(this.bucketname);
-
+this.AwsconfigService.
+create3bucket(this.bucketname);
 	}
 
 

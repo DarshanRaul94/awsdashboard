@@ -5,10 +5,41 @@
               </div>
             </div>
 
-             <div class="block" style="margin-bottom:80px">
-<app-circle [circlename]="'No of Instances'" [circledata]='5'></app-circle>
-<app-circle [circlename]="'Security Groups'" [circledata]='5'></app-circle>
-<app-circle [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
-            </div>
-<app-button [btntitle]="'Back'" routerLink="/main"></app-button>
-<app-button [btntitle]="'Get servers'" (click)="getservers()"></app-button>
+             <div class="block animated jackInTheBox faster"><!--CIRCLES-->
+   <app-circle [circlename]="'No of Instances'" [circledata]='5' [circledescription]="'These are the number of isntances in your account in this region'"></app-circle>
+   <app-circle style="margin:40px;margin-top:0px" [circlename]="'No of Security groups'" [circledata]='3' [circledescription]="'These are the number of Security groups '"></app-circle>
+   <app-circle [circlename]="'No of Load balancers'" [circledata]='1' [circledescription]="'These are the number of Load balancers in your account'"></app-circle>
+</div>
+
+
+<div class="block"><!--BUTTONS-->
+   <app-button style="margin:40px;" ngbPopover="Create servers by entering details" triggers="mouseenter:mouseleave" (click)="openCreateBucket(createbucketcontent)" [btntitle]="'Create instances'" ></app-button>
+   <app-button style="margin:40px;"  ngbPopover="List all the buckets in your account" triggers="mouseenter:mouseleave"(click)="getbuckets()" [btntitle]="'Create Keypair'" ></app-button>
+    <app-button style="margin:40px;"  ngbPopover="Delete a bucket by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'Delete bucket'" ></app-button>
+   <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
+   
+</div>
+
+<ng-template #createbucketcontent let-modal>
+   <div class="modal-header">
+     
+ 
+
+      <h4 class="modal-title" id="modal-basic-title">Create Instances</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+      </button>
+     
+   </div>
+   <div class="modal-body">
+     <div class="container-fluid">
+       <div class="row">
+      <div class="col">Keypair name:</div> <div class="col"><input type="text" [(ngModel)]="keypair" name="fname"></div></div>
+      <div class="row" style="margin-top:10px">
+      <div class="col">Number of intancess:</div> <div class="col"><input type="text" [(ngModel)]="count" name="fname"></div></div>
+       </div>
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="createservers()">Create Servers</button>
+   </div>
+</ng-template>

@@ -1,3 +1,4 @@
+
 <div class="page-header row no-gutters py-4">
    <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
       <span class="text-uppercase page-subtitle">Dashboard</span>
@@ -17,9 +18,7 @@
    <app-button style="margin:40px;"  ngbPopover="List all the buckets in your account" triggers="mouseenter:mouseleave"(click)="getbuckets()" [btntitle]="'list bucket'" ></app-button>
     <app-button style="margin:40px;"  ngbPopover="Delete a bucket by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'Delete bucket'" ></app-button>
    <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
-   <ul *ngIf="bucketsObservable | async as buckets else empty">
-      <li *ngFor="let bucket of buckets">
-   </ul>
+   
 </div>
 
 

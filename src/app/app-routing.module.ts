@@ -9,18 +9,21 @@ import { Ec2boardComponent } from './Dashboards/services/ec2board/ec2board.compo
 import { CloudwatchboardComponent } from './Dashboards/services/cloudwatchboard/cloudwatchboard.component';
 import { RdsboardComponent } from './Dashboards/services/rdsboard/rdsboard.component';
 import { CreateBucketComponent } from './Actions/S3/create-bucket/create-bucket.component';
+
 const routes: Routes = [
-  { path: 'main', component: MainComponent },
+  { path: 'main', component: MainComponent },///////MAIN DASHBOARD
   { path: 'S3board', component: S3boardComponent },
   { path: 'IAMboard', component: IamboardComponent },
   { path: 'EC2board', component: Ec2boardComponent },
   { path: 'RDSboard', component: RdsboardComponent },
   { path: 'CWboard', component: CloudwatchboardComponent },
-   { path: 'S3/CreateBucket', component: CreateBucketComponent },
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: 'S3/CreateBucket', component: CreateBucketComponent },
+  { path: '', redirectTo: '/main', pathMatch: 'full' }, //////DEFAULT ROUTE TO MAIN 
 ];
+
 @NgModule({
   exports: [ RouterModule ],
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes) ], ////SET IN ROOT 
 })
+
 export class AppRoutingModule {}

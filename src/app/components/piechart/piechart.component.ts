@@ -22,13 +22,11 @@ export class PiechartComponent implements OnInit {
 			showInLegend: false,
 			toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
 			dataPoints: [
-				{ y: 450, name: "Food" },
-				{ y: 120, name: "Insurance" },
-				{ y: 300, name: "Traveling" },
-				{ y: 800, name: "Housing" },
-				{ y: 150, name: "Education" },
-				{ y: 150, name: "Shopping"},
-				{ y: 250, name: "Others" }
+				{ y: 450, name: "EC2" },
+				{ y: 120, name: "S3" },
+				{ y: 300, name: "Lambda" },
+				{ y: 800, name: "IAM" },
+				
 			]
 		}]
 	});

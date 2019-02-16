@@ -8,6 +8,7 @@ import { Component, OnInit ,Input} from '@angular/core';
 export class CircleComponent implements OnInit {
 @Input() circledata: any;
 @Input() circlename: any;
+@Input() circledescription:any;
   constructor() { }
 
   ngOnInit() {

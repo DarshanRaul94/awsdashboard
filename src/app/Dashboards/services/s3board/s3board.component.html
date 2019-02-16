@@ -1,26 +1,41 @@
- 
- <div class="page-header row no-gutters py-4">
-              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-                <span class="text-uppercase page-subtitle">Dashboard</span>
-                <h3 class="page-title">AWS S3</h3>
-              </div>
-            </div>
+<div class="page-header row no-gutters py-4">
+   <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+      <span class="text-uppercase page-subtitle">Dashboard</span>
+      <h3 class="page-title">AWS S3</h3>
+   </div>
+</div>
 
-            <div class="block">
-<app-circle [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
-<app-circle style="margin:40px;margin-top:0px" [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
-<app-circle [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
-            </div>
-            
+<div class="block animated jackInTheBox faster"><!--CIRCLES-->
+   <app-circle [circlename]="'No of Buckets'" [circledata]='5' [circledescription]="'These are the number of buckets in your account'"></app-circle>
+   <app-circle style="margin:40px;margin-top:0px" [circlename]="'No of Regions'" [circledata]='3' [circledescription]="'These are the number of regions the buckets are stored in '"></app-circle>
+   <app-circle [circlename]="'No of Glacier Vaults'" [circledata]='1' [circledescription]="'These are the number of Glacier Vaults in your account'"></app-circle>
+</div>
 
 
- <div class="block">
-   <app-button style="margin:40px;" routerLink="/S3/CreateBucket" [btntitle]="'Create bucket'" ></app-button>
-    <app-button style="margin:40px;"  (click)="getbuckets()" [btntitle]="'list bucket'" ></app-button>
-     <app-button style="margin:40px;"  [btntitle]="'Back'" routerLink="/main"></app-button>
-     
-<ul *ngIf="bucketsObservable | async as buckets else empty">
+<div class="block"><!--BUTTONS-->
+   <app-button style="margin:40px;" ngbPopover="Create bucket by giving name" triggers="mouseenter:mouseleave" (click)="openCreateBucket(createbucketcontent)" [btntitle]="'Create bucket'" ></app-button>
+   <app-button style="margin:40px;"  ngbPopover="List all the buckets in your account" triggers="mouseenter:mouseleave"(click)="getbuckets()" [btntitle]="'list bucket'" ></app-button>
+    <app-button style="margin:40px;"  ngbPopover="Delete a bucket by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'Delete bucket'" ></app-button>
+   <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
+   <ul *ngIf="bucketsObservable | async as buckets else empty">
+      <li *ngFor="let bucket of buckets">
+   </ul>
+</div>
 
-<li *ngFor="let bucket of buckets">
-  </ul>
-   </div>           
+
+<!-- FUNCTION MODALS -->
+
+<ng-template #createbucketcontent let-modal>
+   <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Create Bucket</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      Bucket name: <input type="text" [(ngModel)]="bucketname" name="fname"><br>
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="createbucket()">Create</button>
+   </div>
+</ng-template>

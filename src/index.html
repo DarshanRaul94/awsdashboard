@@ -1,6 +1,6 @@
 <html>
   <head>
-  <base href="/">
+  <base href="/">  <!-- MAKE THIS ./ FOR ELECTRON-->
     <title>AWS App</title>
 	<script>
     var global = global || window;
@@ -12,7 +12,9 @@
   </script>
   </head>
   <body>
-  <my-app><div class="lds-css ng-scope"><div style="width:10%;height:10%;position: absolute;
+  <my-app>
+    <!-- WHOLE CODE FOR THE ROLING PROGRESSBAR-->
+    <div class="lds-css ng-scope"><div style="width:10%;height:10%;position: absolute;
     top:0;
     bottom: 0;
     left: 0;
@@ -68,6 +70,10 @@
   -webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
   transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
 }
-</style></div></my-app>
-  </body>
+</style></div>
+<!-- PROGRESS CIRCLE CODE END-->
+</my-app>
+
+
+</body>
 </html>

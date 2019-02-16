@@ -1,55 +1,54 @@
- <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
-    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 
- <div *ngIf="config ; then thenBlock ; else elseBlock"></div>
 
-               <ng-template #thenBlock>
-            <div class="page-header row no-gutters py-4">
-              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-                <span class="text-uppercase page-subtitle">Dashboard</span>
-                <h3 class="page-title">AWS Services</h3>
-              </div>
-            </div>
+<div *ngIf="config ; then thenBlock ; else elseBlock"></div> <!-- MAIN DIV -->
 
-            <!-- End Page Header -->
-            <!-- Small Stats Blocks -->
-            <div class="row">
-              <div class="col-lg col-md-6 col-sm-6 mb-4  animated pulse slow">
-               <app-card  routerLink="/S3board" [cardname]="'Buckets'" [carddata]="noofbuckets()"></app-card>
-              </div>
-              <div class="col-lg col-md-6 col-sm-6 mb-4 animated pulse slow">
-                <app-card  routerLink="/IAMboard" [cardname]="'Users'" [carddata]="noofusers()"></app-card>
-              </div>
-              <div class="col-lg col-md-4 col-sm-6 mb-4 animated pulse slow">
-                <app-card routerLink="/EC2board" [cardname]="'Instances'" [carddata]="noofinstances()"></app-card>
-              </div>
-              <div class="col-lg col-md-4 col-sm-6 mb-4 animated pulse slow">
-               <app-card  routerLink="/CWboard"[cardname]="'Alarms'" [carddata]="noofalarms()"></app-card>
-              </div>
 
-              <div class="col-lg col-md-4 col-sm-12 mb-4 animated pulse slow">
-                <app-card routerLink="/RDSboard" [cardname]="'Databases'" [carddata]="noofdatabases()"></app-card>
-              </div>
-            </div>
-        <div class="row">
-              <div class="col-lg col-md-6 col-sm-6 mb-4  animated pulse slow">
-               <app-card  [cardname]="'Buckets'" [carddata]='56'></app-card>
-              </div>
-              
-            </div>
-            <div class="row">
+<!-- MAIN DASHBOARD //CONFIG SET-->
+<ng-template #thenBlock>
+  <!-- DASHBOARD TITLE-->
+   <div class="page-header row no-gutters py-4">
+      <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
+         <span class="text-uppercase page-subtitle">Dashboard</span>
+         <h3 class="page-title">AWS Services</h3>
+      </div>
+   </div>
+    <!-- DATA CARDS-->
+   <div class="row">
+      <div class="col-lg col-md-6 col-sm-6 mb-4  animated flipInX ">
+         <app-card  routerLink="/S3board" [cardname]="'Buckets'" [carddata]="noofbuckets()"></app-card>
+      </div>
+      <div class="col-lg col-md-6 col-sm-6 mb-4 animated flipInX ">
+         <app-card  routerLink="/IAMboard" [cardname]="'Users'" [carddata]="noofusers()"></app-card>
+      </div>
+      <div class="col-lg col-md-4 col-sm-6 mb-4 animated flipInX ">
+         <app-card routerLink="/EC2board" [cardname]="'Instances'" [carddata]="noofinstances()"></app-card>
+      </div>
+      <div class="col-lg col-md-4 col-sm-6 mb-4 animated flipInX ">
+         <app-card  routerLink="/CWboard"[cardname]="'Alarms'" [carddata]="noofalarms()"></app-card>
+      </div>
+      <div class="col-lg col-md-4 col-sm-12 mb-4 animated flipInX ">
+         <app-card routerLink="/RDSboard" [cardname]="'Databases'" [carddata]="noofdatabases()"></app-card>
+      </div>
+   </div>
 
-              <div class="col-lg col-md-4 col-sm-12 mb-4" >
-              <app-piechart></app-piechart>
-              </div>
+   <div class="row">
+      <div class="col-lg col-md-6 col-sm-6 mb-4  animated pulse slow">
+         <app-card  [cardname]="'Lambda Functions'" [carddata]='56'></app-card>
+      </div>
+   </div>
 
-</div>
-         
-            
-             </ng-template>
-
-             <ng-template #elseBlock>
-<app-config></app-config>
+   <div class="row">
+      <div class="col-lg col-md-4 col-sm-12 mb-4" >
+         <app-piechart></app-piechart>
+      </div>
+   </div>
 
 </ng-template>
-               
+
+
+<!-- CONFIG FORM  //CONFIG NOT SET-->
+<ng-template #elseBlock>
+   <app-config></app-config>
+</ng-template>

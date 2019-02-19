@@ -55,9 +55,29 @@ export class S3boardComponent implements OnInit {
 
 
 	createbucket() {
-this.AwsconfigService.
-create3bucket(this.bucketname);
-	}
+console.log("clicked")
+
+this.http.post("http://127.0.0.1:8080/buckets/"+this.bucketname,
+    {
+      "name": "morpheus",
+      "job": "leader"
+    })
+    .subscribe(
+        (val) => {
+            console.log("POST call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("POST call in error", response);
+        },
+        () => {
+            console.log("The POST observable is now completed.");
+        });
+}
+
+
+
+
 
 
 	ngOnInit() {}

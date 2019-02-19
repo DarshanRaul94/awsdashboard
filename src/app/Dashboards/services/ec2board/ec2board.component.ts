@@ -13,7 +13,8 @@ export class Ec2boardComponent implements OnInit {
 
 keypair:any;
 count:any;
-  constructor(private AwsconfigService: AwsconfigService, private modalService: NgbModal) { }
+
+constructor(private AwsconfigService: AwsconfigService, private modalService: NgbModal) { }
 
   ngOnInit() {
   }
@@ -24,7 +25,8 @@ createservers(){
 this.AwsconfigService.createec2server(this.keypair,this.count);
 
 }
-openCreateBucket(content) {
+
+openCreateInstance(content) {
 		this.modalService.open(content, {
 			centered: true,
 			backdropClass: 'light-blue-backdrop'

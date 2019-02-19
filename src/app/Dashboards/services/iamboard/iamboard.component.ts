@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AwsconfigService } from '../../../Services/awsconfig.service';
+
+import {
+	NgbModal,
+	ModalDismissReasons
+} from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-iamboard',
   templateUrl: './iamboard.component.html',
@@ -7,7 +12,7 @@ import { AwsconfigService } from '../../../Services/awsconfig.service';
 })
 export class IamboardComponent implements OnInit {
 
-  constructor(private AwsconfigService: AwsconfigService) { }
+  constructor(private AwsconfigService: AwsconfigService, private modalService: NgbModal) { }
 
   ngOnInit() {
   }
@@ -17,4 +22,17 @@ getusers(){
 	this.AwsconfigService.createiamuser();
 	
 }
+
+openCreateUser(content) {
+		this.modalService.open(content, {
+			centered: true,
+			backdropClass: 'light-blue-backdrop'
+		});
+	}
+
+  createusers(){
+
+
+
+  }
 }

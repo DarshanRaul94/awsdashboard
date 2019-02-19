@@ -13,14 +13,14 @@
 
 
 <div class="block"><!--BUTTONS-->
-   <app-button style="margin:40px;" ngbPopover="Create servers by entering details" triggers="mouseenter:mouseleave" (click)="openCreateBucket(createbucketcontent)" [btntitle]="'Create instances'" ></app-button>
+   <app-button style="margin:40px;" ngbPopover="Create servers by entering details" triggers="mouseenter:mouseleave" (click)="openCreateInstance(createinstancecontent)" [btntitle]="'Create instances'" ></app-button>
    <app-button style="margin:40px;"  ngbPopover="List all the buckets in your account" triggers="mouseenter:mouseleave"(click)="getbuckets()" [btntitle]="'Create Keypair'" ></app-button>
-    <app-button style="margin:40px;"  ngbPopover="Delete a bucket by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'Delete bucket'" ></app-button>
+    <app-button style="margin:40px;"  ngbPopover="Delete a bucket by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'Stop Instance'" ></app-button>
    <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
    
 </div>
 
-<ng-template #createbucketcontent let-modal>
+<ng-template #createinstancecontent let-modal>
    <div class="modal-header">
      
  

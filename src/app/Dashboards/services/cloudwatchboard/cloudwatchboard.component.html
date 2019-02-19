@@ -5,9 +5,40 @@
               </div>
             </div>
 
-             <div class="block">
-<app-circle [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
-<app-circle [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
-<app-circle [circlename]="'No of Buckets'" [circledata]='5'></app-circle>
-            </div>
-<app-button [btntitle]="'Back'" routerLink="/main"></app-button>
+            <div class="block animated jackInTheBox faster"><!--CIRCLES-->
+   <app-circle [circlename]="'No of Alarms'" [circledata]='5' [circledescription]="'These are the number of Alarms in your account'"></app-circle>
+   <app-circle style="margin:40px;margin-top:0px" [circlename]="'No of Events'" [circledata]='3' [circledescription]="'These are the number of Events '"></app-circle>
+   <app-circle [circlename]="'No of Logs'" [circledata]='1' [circledescription]="'These are the number of Logs in your account'"></app-circle>
+</div>
+
+
+<div class="block"><!--BUTTONS-->
+   <app-button style="margin:40px;" ngbPopover="Create alarms by giving details" triggers="mouseenter:mouseleave" (click)="openCreateAlarm(createalarmcontent)" [btntitle]="'Create Alarm'" ></app-button>
+   <app-button style="margin:40px;"  ngbPopover="Create event by giving details" triggers="mouseenter:mouseleave"(click)="getbuckets()" [btntitle]="'Create event'" ></app-button>
+    <app-button style="margin:40px;"  ngbPopover="view logs by providing data" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'view logs'" ></app-button>
+   <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
+   
+</div>
+
+<ng-template #createalarmcontent let-modal>
+   <div class="modal-header">
+     
+ 
+
+      <h4 class="modal-title" id="modal-basic-title">Create Users</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+      </button>
+     
+   </div>
+   <div class="modal-body">
+     <div class="container-fluid">
+       <div class="row">
+      <div class="col">User name:</div> <div class="col"><input type="text" [(ngModel)]="keypair" name="fname"></div></div>
+     
+       </div>
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="createalarms()">Create Servers</button>
+   </div>
+</ng-template>

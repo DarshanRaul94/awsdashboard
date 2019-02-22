@@ -9,6 +9,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material';
+import {MatListModule} from '@angular/material/list';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -44,7 +46,10 @@ import { AwsconfigService } from './Services/awsconfig.service';
   //////MATARIAL ONES
   MatInputModule,
   MatFormFieldModule,
-  MatIconModule
+  MatIconModule,
+MatSnackBarModule,
+MatListModule
+
   ],
   declarations: [ 
     AppComponent,

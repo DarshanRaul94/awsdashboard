@@ -14,8 +14,8 @@
 
 
 <div class="block"><!--BUTTONS-->
-   <app-button style="margin:40px;" ngbPopover="Create bucket by giving name" triggers="mouseenter:mouseleave" (click)="openCreateBucket(createbucketcontent)" [btntitle]="'Create bucket'" ></app-button>
-   <app-button style="margin:40px;"  ngbPopover="List all the buckets in your account" triggers="mouseenter:mouseleave"(click)="getbuckets()" [btntitle]="'list bucket'" ></app-button>
+   <app-button style="margin:40px;" ngbPopover="Create bucket by giving name" triggers="mouseenter:mouseleave" (click)="openmodal(createbucketcontent)" [btntitle]="'Create bucket'" ></app-button>
+   <app-button style="margin:40px;"  ngbPopover="List all the buckets in your account" triggers="mouseenter:mouseleave"(click)="openmodal(listbucketcontent);getbuckets()" [btntitle]="'list bucket'" ></app-button>
     <app-button style="margin:40px;"  ngbPopover="Delete a bucket by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'Delete bucket'" ></app-button>
    <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
    
@@ -36,5 +36,28 @@
    </div>
    <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="createbucket()">Create</button>
+   </div>
+</ng-template>
+
+<ng-template #listbucketcontent let-modal>
+   <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Bucket List</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+      </button>
+   </div>
+   <div class="modal-body">
+      
+<mat-list>
+  <mat-list-item *ngFor="let bucket of bucketlist">
+    <h3 matLine> {{bucket}} </h3>
+    
+  </mat-list-item>
+</mat-list>
+
+
+   </div>
+   <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="getbuckets()">list</button>
    </div>
 </ng-template>

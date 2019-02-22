@@ -16,6 +16,8 @@ import {
 	ModalDismissReasons
 } from '@ng-bootstrap/ng-bootstrap';
 
+import {MatSnackBar} from '@angular/material';
+
 
 
 var S3 =require('aws-sdk/clients/s3');
@@ -41,12 +43,13 @@ export class S3boardComponent implements OnInit {
 
 	bucketname: string;
 
+ bucketlist:string[];
 
 
+	constructor(private AwsconfigService: AwsconfigService, private http: HttpClient, private modalService: NgbModal,private snackBar: MatSnackBar) {}
 
-	constructor(private AwsconfigService: AwsconfigService, private http: HttpClient, private modalService: NgbModal) {}
-
-	openCreateBucket(content) {
+	openmodal(content) {
+   
 		this.modalService.open(content, {
 			centered: true,
 			backdropClass: 'light-blue-backdrop'
@@ -57,10 +60,9 @@ export class S3boardComponent implements OnInit {
 	createbucket() {
 console.log("clicked")
 
-this.http.post("http://127.0.0.1:8080/buckets/"+this.bucketname,
+this.http.post(`http://127.0.0.1:8080/buckets?bucketname=${this.bucketname}`,
     {
-      "name": "morpheus",
-      "job": "leader"
+     
     })
     .subscribe(
         (val) => {
@@ -73,22 +75,37 @@ this.http.post("http://127.0.0.1:8080/buckets/"+this.bucketname,
         () => {
             console.log("The POST observable is now completed.");
         });
+
+        this.openSnackBar("Bucket"+this.bucketname+"created","close");
 }
 
-
-
+ openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 
 
 
 	ngOnInit() {}
 
+
+
+
 	getbuckets() {
-	this.buckets = this.http
+     
+	this.http.get(`http://127.0.0.1:8080/buckets/all`)
+			.subscribe((data)=> {
+        
+			
 
-			.get("https://8uvg5oovdj.execute-api.ap-south-1.amazonaws.com/dev/buckets");
+
+this.bucketlist= data['buckets'];
+
+			})
 
 
-	console.log(this.buckets);
+	
 
 	}
 }

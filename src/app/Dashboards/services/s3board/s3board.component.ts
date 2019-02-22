@@ -108,4 +108,28 @@ this.bucketlist= data['buckets'];
 	
 
 	}
+
+  deletebuckets(deletebucketlist){
+
+  
+ for (let item of deletebucketlist){
+   let  bucket=item._text.nativeElement.innerText;
+  this.http.delete(`http://127.0.0.1:8080/buckets?bucketname=${bucket}`,
+    {
+     
+    })
+    .subscribe(
+        (val) => {
+            console.log("DELETE call successful value returned in body", 
+                        val);
+        },
+        response => {
+            console.log("DELETE call in error", response);
+        },
+        () => {
+            console.log("The DELETE observable is now completed.");
+        });
+  }
+console.log(deletebucketlist);
+  }
 }

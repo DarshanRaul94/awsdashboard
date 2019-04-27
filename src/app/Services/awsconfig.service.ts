@@ -10,7 +10,7 @@ import {
 import {
 	BehaviorSubject
 } from 'rxjs';
-
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 const env = require('../config/aws.env.js');
 var AWS = require('aws-sdk');
@@ -27,13 +27,46 @@ var S3 = require('aws-sdk/clients/s3');
 
 export class AwsconfigService {
 
+
+
+	bucketlist: String[] = [];
+    
+
+    getbuckets() {
+
+
+        this.getData().subscribe((result) => {
+            this.bucketlist = result['buckets'];
+            console.log(this.bucketlist);
+        }, (error) => {
+            console.log(error);
+        });
+
+    }
+
+    getData() {
+        let headers = this.createRequestHeader();
+        return this.http.get('https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/s3/buckets', { headers: headers });
+    }
+
+    private createRequestHeader() {
+        // set headers here e.g.
+        let headers = new HttpHeaders({
+
+            "Content-Type": "application/json",
+            "profile": "darshan"
+        });
+
+        return headers;
+	}
+	
 	AccessKey = "";
 	SecretAccessKey = "";
 	Region = "";
 
 	awsconfig: BehaviorSubject < boolean > ;
 
-	constructor() {
+	constructor(private http: HttpClient) {
 		this.awsconfig = new BehaviorSubject < boolean > (false);
 	}
 

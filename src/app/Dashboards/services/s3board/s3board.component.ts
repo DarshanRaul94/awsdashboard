@@ -93,16 +93,17 @@ this.http.post(`http://127.0.0.1:8080/buckets?bucketname=${this.bucketname}`,
 
 
 	getbuckets() {
-     
-	this.http.get(`http://127.0.0.1:8080/buckets/all`)
-			.subscribe((data)=> {
+     this.AwsconfigService.getbuckets();
+     this.bucketlist=this.AwsconfigService.bucketlist;
+// 	this.http.get(`http://127.0.0.1:8080/buckets/all`)
+// 			.subscribe((data)=> {
         
 			
 
 
-this.bucketlist= data['buckets'];
+// this.bucketlist= data['buckets'];
 
-			})
+// 			})
 
 
 	

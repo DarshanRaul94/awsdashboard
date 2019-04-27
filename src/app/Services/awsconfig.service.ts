@@ -29,7 +29,7 @@ export class AwsconfigService {
 
 
 
-	bucketlist: String[] = [];
+	bucketlist: string[] = [];
     
 
     getbuckets() {

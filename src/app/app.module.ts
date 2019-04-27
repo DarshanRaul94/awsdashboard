@@ -51,7 +51,7 @@ MatSnackBarModule,
 MatListModule
 
   ],
-  declarations: [ 
+  declarations: [ // DECLARED ALL THE COMPONENTS HERE ( MAY CREATE SEPERATE MODULES LATER)
     AppComponent,
     CardComponent,
     ButtonComponent,
@@ -67,7 +67,7 @@ MatListModule
     CreateBucketComponent
    ]
  ,providers: [AwsconfigService],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ]  // MADE APPCOMPONENT THE BOOTSTRAP MODULE
 })
 
 export class AppModule { 

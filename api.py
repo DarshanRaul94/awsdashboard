@@ -1,3 +1,6 @@
+
+########OLD CODE NOT SURE HOW I USED IT ###   #tip# use comments kids
+
 import flask
 from flask import request, jsonify
 import boto3
@@ -44,5 +47,8 @@ def bucektcontent():
 
    
     return jsonify(objects[Contents])
+
+
+
 
 app.run(port=7860)

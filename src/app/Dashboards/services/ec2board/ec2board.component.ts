@@ -19,12 +19,12 @@ constructor(private AwsconfigService: AwsconfigService, private modalService: Ng
   ngOnInit() {
   }
 
-createservers(){
+// createservers(){
 
 
-this.AwsconfigService.createec2server(this.keypair,this.count);
+// this.AwsconfigService.createec2server(this.keypair,this.count);
 
-}
+// }
 
 openCreateInstance(content) {
 		this.modalService.open(content, {

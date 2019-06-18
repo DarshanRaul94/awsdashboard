@@ -9,9 +9,10 @@
 - [ ] Convert into FIREBASE app
 - [ ] Add Gitlab CI for building
 - [ ] add AWS amplify/Angular Fire authentication
+- [ ] Add refresh button on Main Dashboard to refresh the counts
 - [ ] S3
-    - [ ] Display no of buckets on Main Dashboard
+    - [x] Display no of buckets on Main Dashboard
     - [ ] Display public/private buckets
     - [ ] Should be able to view the bucket info
-    - [ ] Create Bucket working
-    - [ ] Delete Bucket working
+    - [x] Create Bucket working
+    - [x] Delete Bucket working

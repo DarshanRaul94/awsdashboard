@@ -59,17 +59,35 @@ export class AwsconfigService {
 
 
 	}
+	createbucket(data: any){
+		
+		this.createbucketData(data).subscribe((result) => {
+            
+            
+        }, (error) => {
+            console.log(error);
+        });
+
+
+	}
     getbucketData() {
         let headers = this.createRequestHeader();
         return this.http.get('https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/s3/buckets', { headers: headers });
     }
 
 	deletebucketData(bucket) {
-		console.log("config"+bucket)
+		
 		let headers = this.createRequestHeader();
 		let url="https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/s3/buckets/"+bucket
         return this.http.delete(url, { headers: headers });
-    }
+	}
+	createbucketData(data: any) {
+		
+		let headers = this.createRequestHeader();
+		let url="https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/s3/buckets/"
+        return this.http.post(url, JSON.stringify(data), { headers: headers });
+	}
+	
     private createRequestHeader() {
         // set headers here e.g.
         let headers = new HttpHeaders({
@@ -81,9 +99,9 @@ export class AwsconfigService {
         return headers;
 	}
 	
-	// AccessKey = "";
-	// SecretAccessKey = "";
-	// Region = "";
+	AccessKey = "";
+	SecretAccessKey = "";
+	Region = "";
 
 	awsconfig: BehaviorSubject < boolean > ;
 

@@ -58,23 +58,24 @@ export class S3boardComponent implements OnInit {
 
 
 	createbucket() {
-console.log("clicked")
-
-this.http.post(`http://127.0.0.1:8080/buckets?bucketname=${this.bucketname}`,
-    {
+    
+    this.AwsconfigService.createbucket({ "bucket_name": this.bucketname });
+    
+// this.http.post(`http://127.0.0.1:8080/buckets?bucketname=${this.bucketname}`,
+//     {
      
-    })
-    .subscribe(
-        (val) => {
-            console.log("POST call successful value returned in body", 
-                        val);
-        },
-        response => {
-            console.log("POST call in error", response);
-        },
-        () => {
-            console.log("The POST observable is now completed.");
-        });
+//     })
+//     .subscribe(
+//         (val) => {
+//             console.log("POST call successful value returned in body", 
+//                         val);
+//         },
+//         response => {
+//             console.log("POST call in error", response);
+//         },
+//         () => {
+//             console.log("The POST observable is now completed.");
+//         });
 
         this.openSnackBar("Bucket"+this.bucketname+"created","close");
 }

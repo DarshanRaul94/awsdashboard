@@ -46,7 +46,11 @@ export class S3boardComponent implements OnInit {
  bucketlist:string[];
  bucketcount=this.AwsconfigService.bucketlist.length;
 
-	constructor(private AwsconfigService: AwsconfigService, private http: HttpClient, private modalService: NgbModal,private snackBar: MatSnackBar) {}
+	constructor(private AwsconfigService: AwsconfigService, private http: HttpClient, private modalService: NgbModal,private snackBar: MatSnackBar) {
+
+
+    this.getbuckets();
+  }
 
 	openmodal(content) {
    

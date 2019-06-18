@@ -16,23 +16,23 @@ export class IamboardComponent implements OnInit {
 
   ngOnInit() {
   }
-getusers(){
+// getusers(){
 	
 	
-	this.AwsconfigService.createiamuser();
+// 	this.AwsconfigService.createiamuser();
 	
-}
+// }
 
-openCreateUser(content) {
-		this.modalService.open(content, {
-			centered: true,
-			backdropClass: 'light-blue-backdrop'
-		});
-	}
+// openCreateUser(content) {
+// 		this.modalService.open(content, {
+// 			centered: true,
+// 			backdropClass: 'light-blue-backdrop'
+// 		});
+// 	}
 
-  createusers(){
+//   createusers(){
 
 
 
-  }
+//   }
 }

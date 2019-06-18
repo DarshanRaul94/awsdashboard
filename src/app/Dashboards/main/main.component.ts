@@ -39,6 +39,7 @@ export class MainComponent implements OnInit {
 	ngOnInit() {
 
 		this.AwsconfigService.getconfig().subscribe(config => this.config = config);
+		this.AwsconfigService.getbuckets();
 
 	}
 
@@ -47,7 +48,7 @@ export class MainComponent implements OnInit {
 // THIS FUNCTIONS WILL GET THE DATA FROM THE SERVICE API CALLS AND DISPLAY DATA (NUMBERS EG: NO OF BUCKETS ETC)
 
 	noofbuckets() {
-		return 12;
+		return this.AwsconfigService.bucketlist.length;
 	}
 	noofusers() {
 		return 24;

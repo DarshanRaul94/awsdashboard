@@ -44,7 +44,7 @@ export class S3boardComponent implements OnInit {
 	bucketname: string;
 
  bucketlist:string[];
- bucketcount=0;
+ bucketcount=this.AwsconfigService.bucketlist.length;
 
 	constructor(private AwsconfigService: AwsconfigService, private http: HttpClient, private modalService: NgbModal,private snackBar: MatSnackBar) {}
 
@@ -99,7 +99,7 @@ this.http.post(`http://127.0.0.1:8080/buckets?bucketname=${this.bucketname}`,
 // 			.subscribe((data)=> {
         
 			
-  this.bucketcount=this.bucketlist.length;
+  //this.bucketcount=this.bucketlist.length;
 
 // this.bucketlist= data['buckets'];
 
@@ -115,21 +115,24 @@ this.http.post(`http://127.0.0.1:8080/buckets?bucketname=${this.bucketname}`,
   
  for (let item of deletebucketlist){
    let  bucket=item._text.nativeElement.innerText;
-  this.http.delete(`http://127.0.0.1:8080/buckets?bucketname=${bucket}`,
-    {
+   console.log(bucket);
+  this.AwsconfigService.deletebuckets(bucket);
+  // this.http.delete(`https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/s3/buckets/${bucket}`,
+  // //this.http.delete(`http://127.0.0.1:8080/buckets?bucketname=${bucket}  
+  // {
      
-    })
-    .subscribe(
-        (val) => {
-            console.log("DELETE call successful value returned in body", 
-                        val);
-        },
-        response => {
-            console.log("DELETE call in error", response);
-        },
-        () => {
-            console.log("The DELETE observable is now completed.");
-        });
+  //   })
+  //   .subscribe(
+  //       (val) => {
+  //           console.log("DELETE call successful value returned in body", 
+  //                       val);
+  //       },
+  //       response => {
+  //           console.log("DELETE call in error", response);
+  //       },
+  //       () => {
+  //           console.log("The DELETE observable is now completed.");
+  //       });
   }
 console.log(deletebucketlist);
   }

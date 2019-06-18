@@ -43,12 +43,12 @@ import { AwsconfigService } from './Services/awsconfig.service';
   AppRoutingModule,
   HttpClientModule,
   NgbModule,///NGBOOTSTRAP
-  //////MATARIAL ONES
+  //////MATERIAL ONES
   MatInputModule,
   MatFormFieldModule,
   MatIconModule,
-MatSnackBarModule,
-MatListModule
+  MatSnackBarModule,
+  MatListModule
 
   ],
   declarations: [ // DECLARED ALL THE COMPONENTS HERE ( MAY CREATE SEPERATE MODULES LATER)

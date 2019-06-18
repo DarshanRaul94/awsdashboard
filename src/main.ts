@@ -1,5 +1,8 @@
 // MAIN TS 
-
+ /**
+  * // TODO: comment dispose
+  * 
+  */
 
 import './polyfills';
 

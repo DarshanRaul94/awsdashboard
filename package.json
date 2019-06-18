@@ -1,6 +1,6 @@
 {
   "name": "zzmibzzo.github",
-  "version": "0.1.0", 
+  "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@angular/animations": "^7.2.10",

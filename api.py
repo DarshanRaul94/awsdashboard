@@ -16,7 +16,7 @@ app.config["DEBUG"] = True
 @app.route('/', methods=['GET'])
 def home():
     return '''<h1>aws api</h1>
-<p>A prototype API for distant reading of science fiction novels.</p>'''
+</p>'''
 
 
 @app.route('/buckets/all', methods=['GET'])

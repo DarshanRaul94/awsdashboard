@@ -7,9 +7,9 @@
 </div>
 
 <div class="block animated jackInTheBox faster"><!--CIRCLES-->
-   <app-circle [circlename]="'No of Buckets'" [circledata]=bucketcount [circledescription]="'These are the number of buckets in your account'"></app-circle>
-   <app-circle style="margin:40px;margin-top:0px" [circlename]="'No of Regions'" [circledata]='3' [circledescription]="'These are the number of regions the buckets are stored in '"></app-circle>
-   <app-circle [circlename]="'No of Glacier Vaults'" [circledata]='1' [circledescription]="'These are the number of Glacier Vaults in your account'"></app-circle>
+   <app-circle [circlename]="'Buckets'" [circledata]=bucketcount [circledescription]="'These are the number of buckets in your account'"></app-circle>
+   <app-circle style="margin:40px;margin-top:0px" [circlename]="'Public buckets'" [circledata]='3' [circledescription]="'These are the number of Public buckets in your account'"></app-circle>
+   <app-circle [circlename]="'Private buckets'" [circledata]='1' [circledescription]="'These are the number of Private  buckets in your account'"></app-circle>
 </div>
 
 
@@ -23,6 +23,12 @@
    
 </div>
 
+
+
+<ul  *ngFor="let bucket of bucketlist">
+   <li matLine> {{bucket}} </li>
+   
+ </ul>
 
 <!-- FUNCTION MODALS -->
 
@@ -50,12 +56,9 @@
    </div>
    <div class="modal-body">
       
-<mat-list>
-  <mat-list-item *ngFor="let bucket of bucketlist">
-    <h3 matLine> {{bucket}} </h3>
-    
-  </mat-list-item>
-</mat-list>
+
+ 
+
 
 
    </div>

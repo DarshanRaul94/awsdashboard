@@ -44,7 +44,7 @@ export class S3boardComponent implements OnInit {
 	bucketname: string;
 
  bucketlist:string[];
-
+ bucketcount=0;
 
 	constructor(private AwsconfigService: AwsconfigService, private http: HttpClient, private modalService: NgbModal,private snackBar: MatSnackBar) {}
 
@@ -99,7 +99,7 @@ this.http.post(`http://127.0.0.1:8080/buckets?bucketname=${this.bucketname}`,
 // 			.subscribe((data)=> {
         
 			
-
+  this.bucketcount=this.bucketlist.length;
 
 // this.bucketlist= data['buckets'];
 

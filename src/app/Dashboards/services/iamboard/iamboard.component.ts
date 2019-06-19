@@ -26,8 +26,8 @@ this.AwsconfigService.getroles();
 
 	username: string;
 
- userlist:string[];
- grouplist:string[];
+ userlist:string[]=this.AwsconfigService.userlist;
+ grouplist:string[]=this.AwsconfigService.grouplist;
  rolelist:string[];
 
  usercount=this.AwsconfigService.userlist.length;

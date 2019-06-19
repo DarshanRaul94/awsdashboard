@@ -755,3 +755,18 @@
     padding-left: 85px!important;
   }
 }
+
+/* Custom */
+.equal-height { display: flex; 
+  flex-flow: row wrap; }
+  .equal-height .col-lg-6{ display: flex; 
+    flex: 1 0 400px;
+    flex-flow: column; }
+  .equal-height .col-lg-6 .card {display: flex;
+    height: 100%;
+    
+    
+    align-items: stretch;
+    flex-direction: column;}
+    .equal-height .col-lg-6 .card * { width:100%; text-align: center}
+    

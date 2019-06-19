@@ -22,6 +22,47 @@
    
 </div>
 
+<h1> Users. </h1>
+
+<div class="row equal-height">
+   <div class="col-lg-6 col-md-6 col-sm-6 mb-4  animated flipInX">
+      <div class="stats-small stats-small--1 card card-small">
+         <div class="card-body p-0 d-flex hvr-reveal">
+           <div class="d-flex flex-column">
+             <div class="stats-small__data text-center">
+               <h3 class="stats-small__value count my-3">Users</h3>
+               <ul  *ngFor="let user of userlist">
+                  <li class="fa fa-user"> {{user.Username}} </li>
+                </ul>
+             </div>
+             
+           </div>
+          
+         </div>
+       </div>
+   </div>
+
+   <div class="col-lg-6 col-md-6 col-sm-6 mb-4  animated flipInX">
+      <div class="stats-small stats-small--1 card card-small">
+         <div class="card-body p-0 d-flex hvr-reveal">
+           <div class="d-flex flex-column">
+             <div class="stats-small__data text-center">
+               <h3 class="stats-small__value count my-3">Groups</h3>
+               <ul  *ngFor="let group of grouplist">
+                  <li class="fa fa-user"> {{group.Name}} </li>
+                </ul>
+             </div>
+             
+           </div>
+          
+         </div>
+       </div>
+   </div>
+
+</div>
+
+ 
+
 <ng-template #createusercontent let-modal>
    <div class="modal-header">
      

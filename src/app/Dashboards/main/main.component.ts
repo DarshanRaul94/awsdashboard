@@ -40,6 +40,7 @@ export class MainComponent implements OnInit {
 
 		this.AwsconfigService.getconfig().subscribe(config => this.config = config);
 		this.AwsconfigService.getbuckets();
+		this.AwsconfigService.getusers();
 
 	}
 
@@ -51,7 +52,7 @@ export class MainComponent implements OnInit {
 		return this.AwsconfigService.bucketlist.length;
 	}
 	noofusers() {
-		return 24;
+		return this.AwsconfigService.userlist.length;
 	}
 
 	noofinstances() {

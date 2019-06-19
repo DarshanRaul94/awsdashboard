@@ -29,9 +29,11 @@ var S3 = require('aws-sdk/clients/s3');
 export class AwsconfigService {
 
 
-
+///////////////////S3 
 	bucketlist: string[] = [];
-    
+	userlist: string[] = [];
+	grouplist: string[] = [];
+	rolelist: string[] = [];
 
     getbuckets() {
 		/*
@@ -98,7 +100,44 @@ export class AwsconfigService {
 
         return headers;
 	}
-	
+///////////////////////IAM
+
+
+getusers() {
+	/*
+	 * This function is used to get the users data from backend API
+	 */
+
+	this.getusersData().subscribe((result) => {
+		this.userlist = result['users'];
+		console.log(this.userlist);
+	}, (error) => {
+		console.log(error);
+	});
+
+}
+getusersData() {
+	let headers = this.createRequestHeader();
+	return this.http.get('https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/users', { headers: headers });
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	AccessKey = "";
 	SecretAccessKey = "";
 	Region = "";
@@ -122,6 +161,9 @@ export class AwsconfigService {
 		this.awsconfig.next(newValue);
 		
 	}
+
+
+
 
 
 	// getiamusers() {

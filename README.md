@@ -17,6 +17,11 @@
     - [x] Create Bucket working
     - [x] Delete Bucket working
 - [ ] IAM
+    - [ ] No of Users/Roles/Groups on dashboard
+    - [ ] List:
+        - [ ] user
+        - [ ] Group
+        - [ ] Role
     - [ ] Create:
         - [ ] user
         - [ ] Group

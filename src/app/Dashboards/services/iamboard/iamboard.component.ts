@@ -16,6 +16,25 @@ export class IamboardComponent implements OnInit {
 
   ngOnInit() {
   }
+  users;
+
+	username: string;
+
+ userlist:string[];
+ usercount=this.AwsconfigService.userlist.length;
+
+
+
+
+
+
+
+
+
+
+
+
+
 // getusers(){
 	
 	

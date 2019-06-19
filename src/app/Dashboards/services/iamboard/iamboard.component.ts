@@ -12,7 +12,13 @@ import {
 })
 export class IamboardComponent implements OnInit {
 
-  constructor(private AwsconfigService: AwsconfigService, private modalService: NgbModal) { }
+  constructor(private AwsconfigService: AwsconfigService, private modalService: NgbModal) { 
+this.AwsconfigService.getusers();
+this.AwsconfigService.getgroups();
+this.AwsconfigService.getroles();
+
+
+  }
 
   ngOnInit() {
   }
@@ -21,8 +27,12 @@ export class IamboardComponent implements OnInit {
 	username: string;
 
  userlist:string[];
- usercount=this.AwsconfigService.userlist.length;
+ grouplist:string[];
+ rolelist:string[];
 
+ usercount=this.AwsconfigService.userlist.length;
+ groupcount=this.AwsconfigService.grouplist.length;
+ rolecount=this.AwsconfigService.rolelist.length;
 
 
 

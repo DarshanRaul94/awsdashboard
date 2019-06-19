@@ -41,6 +41,8 @@ export class MainComponent implements OnInit {
 		this.AwsconfigService.getconfig().subscribe(config => this.config = config);
 		this.AwsconfigService.getbuckets();
 		this.AwsconfigService.getusers();
+		this.AwsconfigService.getgroups();
+this.AwsconfigService.getroles();
 
 	}
 

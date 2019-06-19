@@ -120,8 +120,41 @@ getusersData() {
 	let headers = this.createRequestHeader();
 	return this.http.get('https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/users', { headers: headers });
 }
+getgroups() {
+	/*
+	 * This function is used to get the groups data from backend API
+	 */
 
+	this.getgroupsData().subscribe((result) => {
+		this.grouplist = result['groups'];
+		console.log(this.grouplist);
+	}, (error) => {
+		console.log(error);
+	});
 
+}
+getgroupsData() {
+	let headers = this.createRequestHeader();
+	return this.http.get('https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/groups', { headers: headers });
+}
+getroles() {
+	/*
+	 * This function is used to get the roles data from backend API
+	 */
+
+	this.getrolesData().subscribe((result) => {
+		this.rolelist = result['roles'];
+		console.log(this.rolelist);
+	}, (error) => {
+		console.log(error);
+	});
+
+}
+getrolesData() {
+	let headers = this.createRequestHeader();
+	return this.http.get('https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/roles', { headers: headers });
+}
+0
 
 
 

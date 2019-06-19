@@ -1,5 +1,5 @@
 
-########OLD CODE NOT SURE HOW I USED IT ###   #tip# use comments kids
+########OLD CODE NOT was used to run a local API server to test the dashboard
 
 import flask
 from flask import request, jsonify

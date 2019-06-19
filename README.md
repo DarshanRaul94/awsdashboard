@@ -16,3 +16,16 @@
     - [ ] Should be able to view the bucket info
     - [x] Create Bucket working
     - [x] Delete Bucket working
+- [ ] IAM
+    - [ ] Create:
+        - [ ] user
+        - [ ] Group
+        - [ ] Role
+    - [ ] Update:
+        - [ ] user
+        - [ ] Group
+        - [ ] Role
+    - [ ] Delete:
+        - [ ] user
+        - [ ] Group
+        - [ ] Role

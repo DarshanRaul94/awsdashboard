@@ -95,7 +95,7 @@ export class AwsconfigService {
         let headers = new HttpHeaders({
 
             "Content-Type": "application/json",
-            "profile": "darshan"
+            "profile": this.Profile
         });
 
         return headers;
@@ -240,7 +240,7 @@ deletegroupData(group) {
 	AccessKey = "";
 	SecretAccessKey = "";
 	Region = "";
-
+	Profile="";
 	awsconfig: BehaviorSubject < boolean > ;
 
 	constructor(private http: HttpClient) {

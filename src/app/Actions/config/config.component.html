@@ -2,7 +2,10 @@
 <div class="container">
   <form>
     <h1>AWS configuration</h1>
-    
+    <div class="form-group">
+      <input type="text" [(ngModel)]="profile" name="sak" required="required"/>
+      <label for="input" class="control-label">Profile</label><i class="bar"></i>
+    </div>
     <div class="form-group">
       <input type="text" [(ngModel)]="accesskey" name="ak" required="required"/>
      

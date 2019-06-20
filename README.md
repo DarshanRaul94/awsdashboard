@@ -34,3 +34,5 @@
         - [ ] user
         - [ ] Group
         - [ ] Role
+- [x] Building the code and deploying the app to S3
+- Adding script to deploy (build --prod && upload to S3 static website bucket ) for automating

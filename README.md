@@ -1,5 +1,9 @@
-# AWS DASHBOARD
+# AWS KONSOLE
 
+
+## Architecture:
+
+![Architecture](/images/konsolearch2.png)
 
 # TODO:
 - [ ] Comment all the code
@@ -35,4 +39,4 @@
         - [ ] Group
         - [ ] Role
 - [x] Building the code and deploying the app to S3
-- Adding script to deploy (build --prod && upload to S3 static website bucket ) for automating
+- [x] Adding script to deploy (build --prod && upload to S3 static website bucket ) for automating

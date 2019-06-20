@@ -173,7 +173,23 @@ createuserData(data: any) {
 	return this.http.post(url, JSON.stringify(data), { headers: headers });
 }
 
+creategroup(data: any){
+		
+	this.creategroupData(data).subscribe((result) => {
+		
+		
+	}, (error) => {
+		console.log(error);
+	});
 
+
+}
+creategroupData(data: any) {
+		
+	let headers = this.createRequestHeader();
+	let url="https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/groups"
+	return this.http.post(url, JSON.stringify(data), { headers: headers });
+}
 
 
 

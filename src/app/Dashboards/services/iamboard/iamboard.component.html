@@ -16,8 +16,8 @@
 
 <div class="block"><!--BUTTONS-->
    <app-button style="margin:40px;" ngbPopover="Create users by giving details" triggers="mouseenter:mouseleave" (click)="openmodal(createusercontent)" [btntitle]="'Create users'" ></app-button> -->
-   <!-- <app-button style="margin:40px;"  ngbPopover="Create groups by giving details" triggers="mouseenter:mouseleave"(click)="getbuckets()" [btntitle]="'Create groups'" ></app-button>
-    <app-button style="margin:40px;"  ngbPopover="Delete a user by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'delete user'" ></app-button> -->
+   <app-button style="margin:40px;"  ngbPopover="Create groups by giving details" triggers="mouseenter:mouseleave"(click)="openmodal(creategroupcontent)" [btntitle]="'Create groups'" ></app-button>
+    <!-- <app-button style="margin:40px;"  ngbPopover="Delete a user by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'delete user'" ></app-button> --> -->
    <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
    
 </div>
@@ -84,4 +84,27 @@
    <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="createusers()">Create Users</button>
    </div>
+</ng-template>
+
+<ng-template #creategroupcontent let-modal>
+  <div class="modal-header">
+    
+
+
+     <h4 class="modal-title" id="modal-basic-title">Create Groups</h4>
+     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+     <span aria-hidden="true">&times;</span>
+     </button>
+    
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row">
+     <div class="col">Group name:</div> <div class="col"><input type="text" [(ngModel)]="groupname" name="fname"></div></div>
+    
+      </div>
+  </div>
+  <div class="modal-footer">
+     <button type="button" class="btn btn-outline-dark" (click)="creategroups()">Create Groups</button>
+  </div>
 </ng-template>

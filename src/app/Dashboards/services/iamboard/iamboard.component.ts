@@ -25,7 +25,7 @@ this.AwsconfigService.getroles();
   users;
 
 	username: string;
-
+	groupname: string;
  userlist:string[]=this.AwsconfigService.userlist;
  grouplist:string[]=this.AwsconfigService.grouplist;
  rolelist:string[];
@@ -43,7 +43,12 @@ this.AwsconfigService.getroles();
 // this.openSnackBar("Bucket"+this.bucketname+"created","close");
 }
 
-
+creategroups() {
+    
+  this.AwsconfigService.creategroup({ "group_name": this.groupname });
+  
+// this.openSnackBar("Bucket"+this.bucketname+"created","close");
+}
 
 
 

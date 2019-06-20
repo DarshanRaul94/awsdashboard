@@ -36,7 +36,12 @@ this.AwsconfigService.getroles();
 
 
 
-
+ createusers() {
+    
+  this.AwsconfigService.createuser({ "user_name": this.username });
+  
+// this.openSnackBar("Bucket"+this.bucketname+"created","close");
+}
 
 
 
@@ -52,13 +57,15 @@ this.AwsconfigService.getroles();
 	
 // }
 
-// openCreateUser(content) {
-// 		this.modalService.open(content, {
-// 			centered: true,
-// 			backdropClass: 'light-blue-backdrop'
-// 		});
-// 	}
 
+
+  openmodal(content) {
+   
+		this.modalService.open(content, {
+			centered: true,
+			backdropClass: 'light-blue-backdrop'
+		});
+	}
 //   createusers(){
 
 

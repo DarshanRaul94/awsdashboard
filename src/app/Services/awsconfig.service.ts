@@ -154,7 +154,24 @@ getrolesData() {
 	let headers = this.createRequestHeader();
 	return this.http.get('https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/roles', { headers: headers });
 }
-0
+
+createuser(data: any){
+		
+	this.createuserData(data).subscribe((result) => {
+		
+		
+	}, (error) => {
+		console.log(error);
+	});
+
+
+}
+createuserData(data: any) {
+		
+	let headers = this.createRequestHeader();
+	let url="https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/users"
+	return this.http.post(url, JSON.stringify(data), { headers: headers });
+}
 
 
 

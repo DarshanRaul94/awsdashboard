@@ -17,12 +17,13 @@
 <div class="block"><!--BUTTONS-->
    <app-button style="margin:40px;" ngbPopover="Create users by giving details" triggers="mouseenter:mouseleave" (click)="openmodal(createusercontent)" [btntitle]="'Create users'" ></app-button> -->
    <app-button style="margin:40px;"  ngbPopover="Create groups by giving details" triggers="mouseenter:mouseleave"(click)="openmodal(creategroupcontent)" [btntitle]="'Create groups'" ></app-button>
-    <!-- <app-button style="margin:40px;"  ngbPopover="Delete a user by providing name" triggers="mouseenter:mouseleave" (click)="getbuckets()" [btntitle]="'delete user'" ></app-button> --> -->
-   <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
+  <app-button style="margin:40px;"  ngbPopover="Delete a user by providing name" triggers="mouseenter:mouseleave" (click)="openmodal(deleteusercontent)" [btntitle]="'delete user'" ></app-button> 
+  <app-button style="margin:40px;"  ngbPopover="Delete a user by providing name" triggers="mouseenter:mouseleave" (click)="openmodal(deletegroupcontent)" [btntitle]="'delete group'" ></app-button>  
+  <app-button style="margin:40px;"  ngbPopover="Go back to main dashboard" triggers="mouseenter:mouseleave"[btntitle]="'Back'" routerLink="/main"></app-button>
    
 </div>
 
-<h1> Users. </h1>
+
 
 <div class="row equal-height">
    <div class="col-lg-6 col-md-6 col-sm-6 mb-4  animated flipInX">
@@ -108,3 +109,52 @@
      <button type="button" class="btn btn-outline-dark" (click)="creategroups()">Create Groups</button>
   </div>
 </ng-template>
+
+<ng-template #deleteusercontent let-modal>
+  <div class="modal-header">
+    
+
+
+     <h4 class="modal-title" id="modal-basic-title">Create Groups</h4>
+     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+     <span aria-hidden="true">&times;</span>
+     </button>
+    
+  </div>
+  <div class="modal-body">
+    <mat-selection-list #users>
+      <mat-list-option *ngFor="let user of userlist">
+        {{user.Username}}
+      </mat-list-option>
+    </mat-selection-list>
+    <p>
+      Options selected: {{users.selectedOptions.selected.length}}
+    </p>
+  </div>
+  <div class="modal-footer">
+     <button type="button" class="btn btn-outline-dark" (click)="deleteusers(users.selectedOptions.selected)">Delete</button>
+  </div>
+</ng-template>
+
+<!-- <ng-template #deletegroupcontent let-modal>
+  <div class="modal-header">
+    
+
+
+     <h4 class="modal-title" id="modal-basic-title">Create Groups</h4>
+     <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+     <span aria-hidden="true">&times;</span>
+     </button>
+    
+  </div>
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row">
+     <div class="col">Group name:</div> <div class="col"><input type="text" [(ngModel)]="groupname" name="fname"></div></div>
+    
+      </div>
+  </div>
+  <div class="modal-footer">
+     <button type="button" class="btn btn-outline-dark" (click)="creategroups()">Create Groups</button>
+  </div>
+</ng-template> -->

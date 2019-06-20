@@ -50,17 +50,18 @@ creategroups() {
 // this.openSnackBar("Bucket"+this.bucketname+"created","close");
 }
 
+deleteusers(deleteuserlist){
+
+  
+  for (let item of deleteuserlist){
+    let  user=item._text.nativeElement.innerText;
+    console.log(user);
+    this.AwsconfigService.deleteusers(user);
+   }
+ console.log(deleteuserlist);
+   }
 
 
-
-
-
-// getusers(){
-	
-	
-// 	this.AwsconfigService.createiamuser();
-	
-// }
 
 
 

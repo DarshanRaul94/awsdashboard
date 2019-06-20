@@ -193,9 +193,24 @@ creategroupData(data: any) {
 
 
 
+deleteusers(user){
+		
+	this.deleteuserData(user).subscribe((result) => {
+		
+		console.log(user);
+	}, (error) => {
+		console.log(error);
+	});
 
 
+}
 
+deleteuserData(user) {
+		
+	let headers = this.createRequestHeader();
+	let url="https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/users/"+user
+	return this.http.delete(url, { headers: headers });
+}
 
 
 

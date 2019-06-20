@@ -115,7 +115,7 @@
     
 
 
-     <h4 class="modal-title" id="modal-basic-title">Create Groups</h4>
+     <h4 class="modal-title" id="modal-basic-title">Delete Groups</h4>
      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
      <span aria-hidden="true">&times;</span>
      </button>
@@ -136,25 +136,28 @@
   </div>
 </ng-template>
 
-<!-- <ng-template #deletegroupcontent let-modal>
+<ng-template #deletegroupcontent let-modal>
   <div class="modal-header">
     
 
 
-     <h4 class="modal-title" id="modal-basic-title">Create Groups</h4>
+     <h4 class="modal-title" id="modal-basic-title">Delete Groups</h4>
      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
      <span aria-hidden="true">&times;</span>
      </button>
     
   </div>
   <div class="modal-body">
-    <div class="container-fluid">
-      <div class="row">
-     <div class="col">Group name:</div> <div class="col"><input type="text" [(ngModel)]="groupname" name="fname"></div></div>
-    
-      </div>
+    <mat-selection-list #groups>
+      <mat-list-option *ngFor="let group of grouplist">
+        {{group.Name}}
+      </mat-list-option>
+    </mat-selection-list>
+    <p>
+      Options selected: {{groups.selectedOptions.selected.length}}
+    </p>
   </div>
   <div class="modal-footer">
-     <button type="button" class="btn btn-outline-dark" (click)="creategroups()">Create Groups</button>
+     <button type="button" class="btn btn-outline-dark" (click)="deletegroups(groups.selectedOptions.selected)">Delete</button>
   </div>
-</ng-template> -->
+</ng-template>

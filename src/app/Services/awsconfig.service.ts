@@ -213,6 +213,24 @@ deleteuserData(user) {
 }
 
 
+deletegroups(group){
+		
+	this.deletegroupData(group).subscribe((result) => {
+		
+		console.log(group);
+	}, (error) => {
+		console.log(error);
+	});
+
+
+}
+
+deletegroupData(group) {
+		
+	let headers = this.createRequestHeader();
+	let url="https://2f7wrz7c6b.execute-api.ap-south-1.amazonaws.com/dev/iam/groups/"+group
+	return this.http.delete(url, { headers: headers });
+}
 
 
 

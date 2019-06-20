@@ -62,7 +62,18 @@ deleteusers(deleteuserlist){
    }
 
 
+   deletegroups(deletegrouplist){
 
+  
+    for (let item of deletegrouplist){
+      let  group=item._text.nativeElement.innerText;
+      console.log(group);
+      this.AwsconfigService.deletegroups(group);
+     }
+   console.log(deletegrouplist);
+     }
+  
+  
 
 
   openmodal(content) {
@@ -72,9 +83,5 @@ deleteusers(deleteuserlist){
 			backdropClass: 'light-blue-backdrop'
 		});
 	}
-//   createusers(){
 
-
-
-//   }
 }

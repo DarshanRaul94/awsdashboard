@@ -22,21 +22,11 @@
     - [x] Delete Bucket working
 - [ ] IAM
     - [x] No of Users/Roles/Groups on dashboard //ROLE API call error from backend
-    - [ ] List:
+    - [ ] List/Create/Delete:
         - [ ] user
         - [ ] Group
         - [ ] Role
-    - [ ] Create:
-        - [ ] user
-        - [ ] Group
-        - [ ] Role
-    - [ ] Update:
-        - [ ] user
-        - [ ] Group
-        - [ ] Role
-    - [ ] Delete:
-        - [ ] user
-        - [ ] Group
-        - [ ] Role
+    
 - [x] Building the code and deploying the app to S3
 - [x] Adding script to deploy (build --prod && upload to S3 static website bucket ) for automating
+- [x] Create JenkinsFile to Continously build and deploy the code to S3 bucket

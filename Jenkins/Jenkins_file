@@ -1,0 +1,25 @@
+node {
+  
+   stage('Preparation') { 
+      
+      git 'https://github.com/darshan-raul/awsdashboard'
+      
+    }
+    
+   stage('Build') {
+    dir("awsdashboard") {
+        sh 'pwd'
+        sh 'npm install'
+		sh 'npm build --prod'
+     
+    }
+       
+   }
+    stage('Deploy') {
+   
+     
+         '''s3upload script'''
+
+    }
+    
+}

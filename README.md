@@ -85,7 +85,7 @@ A step by step series of examples that tell you how to get a development env run
 - [Python](https://www.python.org/) - Backend
 - [Firebase](https://firebase.google.com/) - Authentication
 
-# TODO a name = "todo"></a>
+# TODO <a name = "todo"></a>
 - [ ] Comment all the code
 - [x] remove the graphs until a working prototype is made
 - [x] Add real api calls in the service's 

@@ -17,7 +17,7 @@
     "@types/jasmine": "2.8.16",
     "@types/jasminewd2": "2.0.6",
     "@types/node": "8.9.5",
-    "aws-sdk": "^2.425.0",
+    "aws-sdk": "^2.814.0",
     "core-js": "2.6.4",
     "rxjs": "6.4.0",
     "zone.js": "0.8.29"
